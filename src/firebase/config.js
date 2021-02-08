@@ -6,13 +6,13 @@ dotenv.config()
 
     // Your web app's Firebase configuration
 firebase.initializeApp({
-    apiKey: "AIzaSyBV208Owp2mO4l4pU2R1Cfy1Zz0dBWwPwA",
+    apiKey: "AIzaSyB0pVlLPuvC6FHNnOBcfcxcW3UUMHR5oBo",
     authDomain: "text-editor-prokit.firebaseapp.com",
     databaseURL: "https://text-editor-prokit-default-rtdb.europe-west1.firebasedatabase.app",
-    projectId: "text-editor-prokit",
-    storageBucket: "text-editor-prokit.appspot.com",
-    messagingSenderId: "86227175452",
-    appId: "1:86227175452:web:36860695f42b9d0fd337d9"
+    projectId: "achiyablog",
+    storageBucket: "achiyablog.appspot.com",
+    messagingSenderId: "495689365486",
+    appId: "1:495689365486:web:272e3f7045f6829de540ff"
     });
 
 

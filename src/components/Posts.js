@@ -9,9 +9,6 @@ const useStyles = makeStyles((theme) => ({
         main: {
             marginTop: 0
         },
-        root:{
-            flex:1
-        }
     }
 ));
 
