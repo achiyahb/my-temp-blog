@@ -7,7 +7,7 @@ import {Link} from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
         main: {
-            marginTop: '5rem'
+            marginTop: '7rem'
         }
     }
 ));
@@ -25,8 +25,7 @@ const Main = () => {
             <h2>
                 למה קראתי לו ככה? קראו בפוסט הראשון
             </h2>
-            <Link to="/product">Go to product</Link>
-            <div>
+            <div className={classes.main}>
                 <Posts posts={posts}/>
             </div>
         </div>

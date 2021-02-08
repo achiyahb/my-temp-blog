@@ -20,7 +20,6 @@ const App = () => {
         firebaseApi.getData(path)
             .then(res=>{
                 if(res){
-                    console.log(res)
                     let postsObj = res
                     let dbPosts = []
                     let index = 0
@@ -30,7 +29,6 @@ const App = () => {
                         dbPosts.push(post)
                         index++
                     }
-                    console.log(dbPosts)
                     setPosts(dbPosts)
                 }
             })
@@ -38,14 +36,16 @@ const App = () => {
 
 
     return (
-        <div>
+        <div
+        dir="rtl"
+        >
             <Header/>
             <PostsProvider value={posts}>
             <Container>
                 <Router>
                     <Switch>
                         <Route exact path="/"><Products/></Route>
-                        <Route path="/product"><BlogPost/></Route>
+                        <Route path="/:postId"><BlogPost/></Route>
                     </Switch>
                 </Router>
             </Container>

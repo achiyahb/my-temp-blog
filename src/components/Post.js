@@ -1,5 +1,4 @@
-import React, {useEffect, useContext} from 'react';
-import PostsContext from "../context/PostsContext";
+import React, {useEffect} from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -11,6 +10,7 @@ import Typography from '@material-ui/core/Typography';
 
 
 
+
 const useStyles = makeStyles((theme) => ({
         root: {
             maxWidth: 345,
@@ -19,15 +19,16 @@ const useStyles = makeStyles((theme) => ({
         media: {
             height: 140,
         },
+        pargr:{
+            textDecoration:"none"
+        }
     }
 ));
 
 const Posts = ({post}) => {
     const classes = useStyles();
-
     useEffect(()=>{
         setTimeout(()=>{
-            console.log(post)
         },2000)
     },[])
 
@@ -36,14 +37,15 @@ const Posts = ({post}) => {
             <CardActionArea>
                 <CardMedia
                     className={classes.media}
-                    image="/static/images/cards/contemplative-reptile.jpg"
+                    src="https://www.webnode.com/blog/wp-content/uploads/2019/04/blog2.png"
+                    component="img"
                     title="Contemplative Reptile"
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
                         {post.title}
                     </Typography>
-                    <Typography variant="body2" color="textSecondary" component="p">
+                    <Typography variant="body2" color="textSecondary" component="p" className={classes.pargr}>
                         {post.description}
                     </Typography>
                 </CardContent>

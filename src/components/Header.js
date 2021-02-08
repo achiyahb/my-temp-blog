@@ -41,7 +41,7 @@ const Header = () =>{
                 padding: `0.90rem 1.0875rem`,
             }}
         >
-            <Grid container spacing={20}>
+            <Grid container >
                 <Grid item>
                     <h1>
                         הבלוג הזמני שלי
