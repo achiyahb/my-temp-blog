@@ -1,6 +1,5 @@
 import React from "react"
 import {AppBar, Grid, Toolbar} from "@material-ui/core";
-import UserAvatar from "./UserAvatar";
 import { makeStyles } from "@material-ui/styles";
 
 
@@ -43,22 +42,10 @@ const Header = () =>{
             }}
         >
             <Grid container spacing={20}>
-                {/*<Grid item>*/}
-                {/*    <div>*/}
-                {/*       */}
-                {/*    </div>*/}
-                {/*</Grid>*/}
                 <Grid item>
                     <h1>
-                        pro-kit blog editor
+                        הבלוג הזמני שלי
                     </h1>
-                </Grid>
-                <Grid item>
-                    <div
-                        className={classes.avatar}
-                    >
-                        <UserAvatar />
-                    </div>
                 </Grid>
             </Grid>
         </div>
