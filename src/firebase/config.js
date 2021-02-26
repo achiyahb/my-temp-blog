@@ -1,18 +1,18 @@
 import dotenv from 'dotenv'
 import firebase from 'firebase/app';
-import 'firebase/database'
+import 'firebase/firestore'
 dotenv.config()
 
 
     // Your web app's Firebase configuration
 firebase.initializeApp({
-    apiKey: "AIzaSyB0pVlLPuvC6FHNnOBcfcxcW3UUMHR5oBo",
+    apiKey: "AIzaSyBV208Owp2mO4l4pU2R1Cfy1Zz0dBWwPwA",
     authDomain: "text-editor-prokit.firebaseapp.com",
     databaseURL: "https://text-editor-prokit-default-rtdb.europe-west1.firebasedatabase.app",
-    projectId: "achiyablog",
-    storageBucket: "achiyablog.appspot.com",
-    messagingSenderId: "495689365486",
-    appId: "1:495689365486:web:272e3f7045f6829de540ff"
+    projectId: "text-editor-prokit",
+    storageBucket: "text-editor-prokit.appspot.com",
+    messagingSenderId: "86227175452",
+    appId: "1:86227175452:web:36860695f42b9d0fd337d9"
     });
 
 

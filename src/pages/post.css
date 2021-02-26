@@ -1,0 +1,9 @@
+pre{
+   background-color:black;
+    color:#ECEFF1;
+    direction: ltr;
+    margin: 3rem;
+    border-radius: 8px;
+    padding: 2rem;
+    font-size: 20px;
+}

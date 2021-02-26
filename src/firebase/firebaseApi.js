@@ -1,7 +1,7 @@
 import firebaseInstance from './config';
 
 
-const db = firebaseInstance.firebase.database();
+const db = firebaseInstance.firebase.firestore();
 
 export default {
     writeData,
@@ -12,25 +12,62 @@ export default {
 
 
 // the good one
-function getData(path) {
-    return db.ref(path).once('value')
-        .then(res => {
-            return res.val();
+function getData(collections) {
+    let ref = getRef(collections)
+
+    return ref.get().then((doc) => {
+        if(doc.docs){
+            let docsArray = []
+            doc.docs.forEach((doc,key)=>{
+                let obj = doc.data()
+                obj.id = doc.id
+                docsArray.push(obj)
+            })
+            return docsArray
+        }else{
+            return  doc.data()
+        }
+
+    }).catch((error) => {
+        console.log("Error getting document:", error);
+    });
+
+}
+
+function updateData(data, collections) {
+    let ref = getRef(collections)
+    return ref.set(data)
+        .then(res=>{
+            return 'success'
         })
 }
 
-function updateData(data, path) {
-    db.ref(path).set(data);
+async function writeData(data, collections) {
+    let ref = getRef(collections)
+    let res = await ref.add(data)
+    return res['id']
 }
 
-async function writeData(data, path) {
-    let res = await db.ref(path).push(data)
-     return res['key']
+function deleteData(collections) {
+    let ref = getRef(collections)
+    return ref.delete()
+        .then(res=>{
+            console.log("Document successfully deleted!");
+            return 'success'
+        }).catch((error) => {
+            console.error("Error removing document: ", error);
+        });
 }
 
-function deleteData(path) {
-    db.ref(path).set(null);
+function getRef(collections){
+    let ref = db
+    collections.forEach((collection) => {
+        if (!collection.id) {
+            ref = ref.collection(collection.name)
+        } else {
+            ref = ref.collection(collection.name).doc(collection.id)
+        }
+    })
+    return ref
 }
-
-
 

@@ -2,6 +2,7 @@ import React, {useEffect,useContext,useState} from "react";
 import {useParams} from "react-router-dom";
 import PostsContext from "../context/PostsContext";
 import Spiner from "../components/Spiner";
+import './post.css'
 
 function createMarkup(item) {
     return {__html:item};
